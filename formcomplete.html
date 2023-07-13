@@ -20,31 +20,26 @@
             h1.innerHTML = "Hello, " + name + ". Thank, for submitting the form!";
         }
         function changeBackgroundColor() {
-            var red = Math.floor(Math.random() * 256);     // Generate random value for red (0-255)
-            var green = Math.floor(Math.random() * 256);   // Generate random value for green (0-255)
-            var blue = Math.floor(Math.random() * 256);    // Generate random value for blue (0-255)
+            let red = Math.floor(Math.random() * 256);     // Generate random value for red (0-255)
+            let green = Math.floor(Math.random() * 256);   // Generate random value for green (0-255)
+            let blue = Math.floor(Math.random() * 256);    // Generate random value for blue (0-255)
 
-            var hexColor = rgbToHex(red, green, blue);     // Convert RGB values to hexadecimal color code
+            let rgbColor = rgbToString(red, green, blue);     // Convert RGB values to hexadecimal color code
 
-            document.body.style.backgroundColor = hexColor; // Set the background color of the body
+            document.body.style.backgroundColor = rgbColor; // Set the background color of the body
         }
 
         function changeBackgroundColorSpinner() {
-            var red = document.getElementById("red").value;     // Get the value of the red spinner
-            var green = document.getElementById("green").value; // Get the value of the green spinner
-            var blue = document.getElementById("blue").value;   // Get the value of the blue spinner
+            let red = document.getElementById("red").value;     // Get the value of the red spinner
+            let green = document.getElementById("green").value; // Get the value of the green spinner
+            let blue = document.getElementById("blue").value;   // Get the value of the blue spinner
 
-            var hexColor = rgbToHex(red, green, blue);          // Convert RGB values to hexadecimal color code
-
-            document.body.style.backgroundColor = hexColor;     // Set the background color of the body
+            let rgbColor = rgbToString(red, green, blue);          // Convert RGB values to hexadecimal color code
+            document.body.style.backgroundColor = rgbColor;     // Set the background color of the body
         }
 
-        function rgbToHex(red, green, blue) {
-            var redHex = red.toString(16).padStart(2, '0');       // Convert red value to hexadecimal
-            var greenHex = green.toString(16).padStart(2, '0');   // Convert green value to hexadecimal
-            var blueHex = blue.toString(16).padStart(2, '0');     // Convert blue value to hexadecimal
-
-            return '#' + redHex + greenHex + blueHex;             // Build the hexadecimal color code
+        function rgbToString(red, green, blue) {
+            return 'rgb(' + red + ',' + green + ',' + blue + ')'
         }
     </script>
 </head>
