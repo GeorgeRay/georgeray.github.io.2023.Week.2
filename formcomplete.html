@@ -19,6 +19,23 @@
             var h1 = document.getElementById("greeting");
             h1.innerHTML = "Hello, " + name + ". Thank, for submitting the form!";
         }
+        function changeBackgroundColor() {
+            var red = Math.floor(Math.random() * 256);     // Generate random value for red (0-255)
+            var green = Math.floor(Math.random() * 256);   // Generate random value for green (0-255)
+            var blue = Math.floor(Math.random() * 256);    // Generate random value for blue (0-255)
+
+            var hexColor = rgbToHex(red, green, blue);     // Convert RGB values to hexadecimal color code
+
+            document.body.style.backgroundColor = hexColor; // Set the background color of the body
+        }
+
+        function rgbToHex(red, green, blue) {
+            var redHex = red.toString(16).padStart(2, '0');       // Convert red value to hexadecimal
+            var greenHex = green.toString(16).padStart(2, '0');   // Convert green value to hexadecimal
+            var blueHex = blue.toString(16).padStart(2, '0');     // Convert blue value to hexadecimal
+
+            return '#' + redHex + greenHex + blueHex;             // Build the hexadecimal color code
+        }
     </script>
 </head>
 
@@ -43,6 +60,8 @@
             <script>
                 printName();
             </script>
+            <h1>While you are here, try changing the background Color</h1>
+            <button onclick="changeBackgroundColor()">Change Color</button>
     </body>
     </main>
     <footer>
