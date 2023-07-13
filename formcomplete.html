@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="style.css">
+    <title>Thank you</title>
+    <script>
+        function printName() {
+            // Get the name from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            let name = urlParams.get('name');
+            // If the name is not in the URL, prompt the user for it
+            while (name == null || name == "") {
+                name = prompt("What is your name?");
+            }
+            // Print the name to the page
+            var h1 = document.getElementById("greeting");
+            h1.innerHTML = "Hello, " + name + ". Thank, for submitting the form!";
+        }
+    </script>
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <h1>Davis Tech Code Camp</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="emmeline.html">Emmeline</a></li>
+                <li><a href="jack.html">Jack</a></li>
+                <li><a href="david.html">David</a></li>
+                <li><a href="joseph.html">Joseph</a></li>
+                <li><a href="logan.html">Logan</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1 id="greeting">Thank, for submitting the form!</h1>
+            <script>
+                printName();
+            </script>
+    </body>
+    </main>
+    <footer>
+        &copy;2023
+    </footer>
+
+</html>
