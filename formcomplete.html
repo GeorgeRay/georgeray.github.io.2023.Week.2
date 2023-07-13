@@ -16,7 +16,7 @@
                 name = prompt("What is your name?");
             }
             // Print the name to the page
-            var h1 = document.getElementById("greeting");
+            let h1 = document.getElementById("greeting");
             h1.innerHTML = "Hello, " + name + ". Thank, for submitting the form!";
         }
         function changeBackgroundColor() {
@@ -27,6 +27,16 @@
             var hexColor = rgbToHex(red, green, blue);     // Convert RGB values to hexadecimal color code
 
             document.body.style.backgroundColor = hexColor; // Set the background color of the body
+        }
+
+        function changeBackgroundColorSpinner() {
+            var red = document.getElementById("red").value;     // Get the value of the red spinner
+            var green = document.getElementById("green").value; // Get the value of the green spinner
+            var blue = document.getElementById("blue").value;   // Get the value of the blue spinner
+
+            var hexColor = rgbToHex(red, green, blue);          // Convert RGB values to hexadecimal color code
+
+            document.body.style.backgroundColor = hexColor;     // Set the background color of the body
         }
 
         function rgbToHex(red, green, blue) {
@@ -61,7 +71,15 @@
                 printName();
             </script>
             <h1>While you are here, try changing the background Color</h1>
-            <button onclick="changeBackgroundColor()">Change Color</button>
+            <button onclick="changeBackgroundColor()">Change Color Automatically</button>
+            <h1>Or, try changing the background Color with the spinners</h1>
+            <label for="red">Red</label>
+            <input type="number" id="red" min="0" max="255" value="0">
+            <label for="green">Green</label>
+            <input type="number" id="green" min="0" max="255" value="0">
+            <label for="blue">Blue</label>
+            <input type="number" id="blue" min="0" max="255" value="0">
+            <button onclick="changeBackgroundColorSpinner()">Change Color Manually</button>
     </body>
     </main>
     <footer>
